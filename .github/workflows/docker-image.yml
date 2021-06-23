@@ -3,6 +3,10 @@ on:
   push:
     tags:
       - "v*.*.*"
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   push_to_registry:
     name: Build and push Docker image to Docker Hub
@@ -27,6 +31,8 @@ jobs:
         run: pwd
       - name: Display current files
         run: ls -la
+      - name: Display current files
+        run: ls -la target
       - name: Build image and push to Docker Hub
         uses: docker/build-push-action@v2
         with:
