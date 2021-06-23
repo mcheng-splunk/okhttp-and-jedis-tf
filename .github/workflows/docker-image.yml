@@ -37,5 +37,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ github.repository }}:${{ env.RELEASE_VERSION }}
+          tags: mcheng.jfrog.io/${{ github.repository }}:${{ env.RELEASE_VERSION }}
 
