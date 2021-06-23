@@ -34,11 +34,11 @@ jobs:
         run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
         shell: bash
       - name: Check Docker tag
-        run: echo "mcheng.jfrog.io/open-telemetry-docker/${{ env.REPOSITORY_NAME }}:${{ env.RELEASE_VERSION }}"
+        run: echo "${{ REGISTRY_NAMESPACE }}/${{ env.REPOSITORY_NAME }}:${{ env.RELEASE_VERSION }}"
       - name: Build image and push to Docker Hub
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: mcheng.jfrog.io/open-telemetry-docker-local/${{ env.REPOSITORY_NAME }}:${{ env.RELEASE_VERSION }}
+          tags: ${{ REGISTRY_NAMESPACE }}/${{ env.REPOSITORY_NAME }}:${{ env.RELEASE_VERSION }}
 
