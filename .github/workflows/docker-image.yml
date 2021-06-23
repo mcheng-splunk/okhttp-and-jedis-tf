@@ -31,11 +31,11 @@ jobs:
       - name: Display current files
         run: ls -la target
       - name: Check Docker tag
-        run: echo "mcheng.jfrog.io/$open-telemetry-docker/{{ github.repository.name }}:${{ env.RELEASE_VERSION }}"
+        run: echo "mcheng.jfrog.io/$open-telemetry-docker/${{ github.repository.name }}:${{ env.RELEASE_VERSION }}"
       - name: Build image and push to Docker Hub
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: mcheng.jfrog.io/$open-telemetry-docker/{{ github.repository.name }}:${{ env.RELEASE_VERSION }}
+          tags: mcheng.jfrog.io/open-telemetry-docker/${{ github.repository.name }}:${{ env.RELEASE_VERSION }}
 
