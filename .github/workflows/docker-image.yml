@@ -40,5 +40,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: mcheng.jfrog.io/open-telemetry-docker/${{ env.REPOSITORY_NAME }}:${{ env.RELEASE_VERSION }}
+          tags: mcheng.jfrog.io/open-telemetry-docker-local/${{ env.REPOSITORY_NAME }}:${{ env.RELEASE_VERSION }}
 
