@@ -31,7 +31,7 @@ jobs:
       - name: Display current files
         run: ls -la target
       - name: Extract Github repository name
-        - run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+        run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
         shell: bash
       - name: Check Docker tag
         run: echo "mcheng.jfrog.io/open-telemetry-docker/${{ env.REPOSITORY_NAME }}:${{ env.RELEASE_VERSION }}"
